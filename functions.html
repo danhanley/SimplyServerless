@@ -94,6 +94,20 @@ html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif}
 
   <div class="w3-row w3-padding-64">
     <div class="w3-twothird w3-container">
+      <h1 class="w3-text-teal">Call the function!</h1>
+      <p><h2><div id="server-response">Result will appear here</div></h2>
+      <button type="button" onclick="callMe()">Change Content</button></p>
+      <p>If you want to test this locally from localhost, then you need to set CORS headers: http://docs.aws.amazon.com/apigateway/latest/developerguide/how-to-cors.html#how-to-cors-console
+      Don't forget to redeploy after setting this up.</p>
+    </div>
+    <div class="w3-third w3-container">
+      <p class="w3-border w3-padding-large w3-padding-32 w3-center">AD</p>
+      <p class="w3-border w3-padding-large w3-padding-64 w3-center">AD</p>
+    </div>
+  </div>
+
+  <div class="w3-row w3-padding-64">
+    <div class="w3-twothird w3-container">
       <h1 class="w3-text-teal">Give it a friendly URL</h1>
       <p>http://docs.aws.amazon.com/apigateway/latest/developerguide/how-to-custom-domains.html</p>
         <p>You'll need an SSL certificate: https://aws.amazon.com/certificate-manager/ looks nice but at the time of writing
@@ -153,6 +167,20 @@ function w3_close() {
     mySidenav.style.display = "none";
     overlayBg.style.display = "none";
 }
+</script>
+
+<script>
+  function callMe() {
+    var xhttp = new XMLHttpRequest();
+    xhttp.onreadystatechange = function() {
+      if (this.readyState == 4 && this.status == 200) {
+        document.getElementById("server-response").innerHTML = this.responseText;
+      }
+    };
+    xhttp.open("GET", "https://qvpphez67b.execute-api.eu-west-1.amazonaws.com/live?q1=lololol", true);
+    xhttp.send();
+  }
+
 </script>
 
 <script>
