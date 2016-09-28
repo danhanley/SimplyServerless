@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html xmlns:https="http://www.w3.org/1999/xhtml">
 <title>Functions as a Service</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="http://www.w3schools.com/lib/w3.css">
@@ -7,190 +7,221 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
 <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
 <style>
-html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif}
-.w3-sidenav a,.w3-sidenav h4{padding:12px;}
-.w3-navbar a{padding-top:12px !important;padding-bottom:12px !important;}
+    html, body, h1, h2, h3, h4, h5, h6 {
+        font-family: "Roboto", sans-serif
+    }
+
+    .w3-sidenav a, .w3-sidenav h4 {
+        padding: 12px;
+    }
+
+    .w3-navbar a {
+        padding-top: 12px !important;
+        padding-bottom: 12px !important;
+    }
 </style>
 <body>
 
 <!-- Navbar -->
 <ul class="w3-navbar w3-theme w3-top w3-left-align w3-large" style="z-index:4;">
-  <li class="w3-opennav w3-right w3-hide-large">
-    <a class="w3-hover-white w3-large w3-theme-l1" href="javascript:void(0)" onclick="w3_open()"><i class="fa fa-bars"></i></a>
-  </li>
-  <li class="w3-hide-small"><a href="index.html" class="w3-hover-white">Home</a></li>
-  <li class="w3-hide-small"><a href="staticsites.html" class="w3-hover-white">Static Sites</a></li>
-  <li><a href="functions.html" class="w3-theme-l1">Functions</a></li>
-  <li class="w3-hide-small"><a href="backends.html" class="w3-hover-white">Backends</a></li>
-  <li class="w3-hide-medium w3-hide-small"><a href="contact.html" class="w3-hover-white">Contact</a></li>
+    <li class="w3-opennav w3-right w3-hide-large">
+        <a class="w3-hover-white w3-large w3-theme-l1" href="javascript:void(0)" onclick="w3_open()"><i
+                class="fa fa-bars"></i></a>
+    </li>
+    <li class="w3-hide-small"><a href="index.html" class="w3-hover-white">Home</a></li>
+    <li class="w3-hide-small"><a href="staticsites.html" class="w3-hover-white">Static Sites</a></li>
+    <li><a href="functions.html" class="w3-theme-l1">Functions</a></li>
+    <li class="w3-hide-small"><a href="backends.html" class="w3-hover-white">Backends</a></li>
+    <li class="w3-hide-medium w3-hide-small"><a href="contact.html" class="w3-hover-white">Contact</a></li>
 </ul>
 
 <!-- Sidenav -->
-<nav class="w3-sidenav w3-collapse w3-theme-l5 w3-animate-left" style="z-index:3;width:250px;margin-top:51px;" id="mySidenav">
-  <a href="javascript:void(0)" onclick="w3_close()" class="w3-right w3-xlarge w3-padding-large w3-hover-black w3-hide-large" title="close menu">
-    <i class="fa fa-remove"></i>
-  </a>
-  <h4><b>Menu</b></h4>
-  <a href="index.html" class="w3-hover-black">Home</a>
-  <a href="staticsites.html" class="w3-hover-black">Static Sites</a>
-  <a href="functions.html" class="w3-hover-black">Functions</a>
-  <a href="backends.html" class="w3-hover-black">Backends</a>
-  <a href="contact.html" class="w3-hover-black">Contact</a>
+<nav class="w3-sidenav w3-collapse w3-theme-l5 w3-animate-left" style="z-index:3;width:250px;margin-top:51px;"
+     id="mySidenav">
+    <a href="javascript:void(0)" onclick="w3_close()"
+       class="w3-right w3-xlarge w3-padding-large w3-hover-black w3-hide-large" title="close menu">
+        <i class="fa fa-remove"></i>
+    </a>
+    <h4><b>Menu</b></h4>
+    <a href="index.html" class="w3-hover-black">Home</a>
+    <a href="staticsites.html" class="w3-hover-black">Static Sites</a>
+    <a href="functions.html" class="w3-hover-black">Functions</a>
+    <a href="backends.html" class="w3-hover-black">Backends</a>
+    <a href="contact.html" class="w3-hover-black">Contact</a>
 </nav>
 
 <!-- Overlay effect when opening sidenav on small screens -->
-<div class="w3-overlay w3-hide-large" onclick="w3_close()" style="cursor:pointer" title="close side menu" id="myOverlay"></div>
+<div class="w3-overlay w3-hide-large" onclick="w3_close()" style="cursor:pointer" title="close side menu"
+     id="myOverlay"></div>
 
 <!-- Main content: shift it to the right by 250 pixels when the sidenav is visible -->
 <div class="w3-main" style="margin-left:250px">
 
-  <div class="w3-row w3-padding-64">
-    <div class="w3-twothird w3-container">
-      <h1 class="w3-text-teal">Heading</h1>
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Lorem ipsum
-        dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-    </div>
-    <div class="w3-third w3-container">
-      <p class="w3-border w3-padding-large w3-padding-32 w3-center">AD</p>
-      <p class="w3-border w3-padding-large w3-padding-64 w3-center">AD</p>
-    </div>
-  </div>
-
-  <div class="w3-row">
-    <div class="w3-twothird w3-container">
-      <h1 class="w3-text-teal">Functions as a Service</h1>
-      <p>Sometimes you need to do computations that may require resources or compute power beyond what can be expected in the cient browser.
-      This is where Functions as a Service come into play in the Serverless world. This section is about writing those little functions.</p>
-    </div>
-    <div class="w3-third w3-container">
-      <p class="w3-border w3-padding-large w3-padding-32 w3-center">AD</p>
-      <p class="w3-border w3-padding-large w3-padding-64 w3-center">AD</p>
-    </div>
-  </div>
-
-  <div class="w3-row w3-padding-64">
-    <div class="w3-twothird w3-container">
-      <h1 class="w3-text-teal">Build, Package and Deploy Function</h1>
-      http://docs.aws.amazon.com/lambda/latest/dg/java-handler-using-predefined-interfaces.html
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Lorem ipsum
-        dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-    </div>
-    <div class="w3-third w3-container">
-      <p class="w3-border w3-padding-large w3-padding-32 w3-center">AD</p>
-      <p class="w3-border w3-padding-large w3-padding-64 w3-center">AD</p>
-    </div>
-  </div>
-
-  <div class="w3-row w3-padding-64">
-    <div class="w3-twothird w3-container">
-      <h1 class="w3-text-teal">Add Function to API Manager</h1>
-      <p>http://stackoverflow.com/questions/31329958/how-to-pass-a-querystring-or-route-parameter-to-aws-lambda-from-amazon-api-gatew</p>
-    </div>
-    <div class="w3-third w3-container">
-      <p class="w3-border w3-padding-large w3-padding-32 w3-center">AD</p>
-      <p class="w3-border w3-padding-large w3-padding-64 w3-center">AD</p>
-    </div>
-  </div>
-
-  <div class="w3-row w3-padding-64">
-    <div class="w3-twothird w3-container">
-      <h1 class="w3-text-teal">Call the function!</h1>
-      <p><h2><div id="server-response">Result will appear here</div></h2>
-      <button type="button" onclick="callMe()">Change Content</button></p>
-      <p>If you want to test this locally from localhost, then you need to set CORS headers: http://docs.aws.amazon.com/apigateway/latest/developerguide/how-to-cors.html#how-to-cors-console
-      Don't forget to redeploy after setting this up.</p>
-    </div>
-    <div class="w3-third w3-container">
-      <p class="w3-border w3-padding-large w3-padding-32 w3-center">AD</p>
-      <p class="w3-border w3-padding-large w3-padding-64 w3-center">AD</p>
-    </div>
-  </div>
-
-  <div class="w3-row w3-padding-64">
-    <div class="w3-twothird w3-container">
-      <h1 class="w3-text-teal">Give it a friendly URL</h1>
-      <p>http://docs.aws.amazon.com/apigateway/latest/developerguide/how-to-custom-domains.html</p>
-        <p>You'll need an SSL certificate: https://aws.amazon.com/certificate-manager/ looks nice but at the time of writing
-            a) To use an ACM Certificate with CloudFront, you must request the certificate in the US East (N. Virginia) region. Not a problem.
-        b) You need to have access to the certificate body and key. On the roadmap (or some better integration?) but not available yet: https://forums.aws.amazon.com/thread.jspa?threadID=234686</p>
-    </div>
-    <div class="w3-third w3-container">
-      <p class="w3-border w3-padding-large w3-padding-32 w3-center">AD</p>
-      <p class="w3-border w3-padding-large w3-padding-64 w3-center">AD</p>
-    </div>
-  </div>
-
-  <!-- Pagination -->
-  <div class="w3-center w3-padding-64">
-    <ul class="w3-pagination">
-      <li><a class="w3-hover-black w3-hide-small" href="index.html">1</a></li>
-      <li><a class="w3-hover-black" href="staticsites.html">2</a></li>
-      <li><a class="w3-black" href="functions.html">3</a></li>
-      <li><a class="w3-hover-black" href="backends.html">4</a></li>
-      <li><a class="w3-hover-black w3-hide-small" href="contact.html">5</a></li>
-    </ul>
-  </div>
-
-  <footer id="myFooter">
-    <div class="w3-container w3-theme-l2 w3-padding-32">
-      <h4></h4>
+    <div class="w3-row w3-padding-64">
+        <div class="w3-twothird w3-container">
+            <h1 class="w3-text-teal">Functions as a Service</h1>
+            <p>Sometimes you need to do computations that may require resources or compute power beyond what can be
+                expected in the cient browser.
+                This is where Functions as a Service come into play in the Serverless world. This section is about
+                writing those little functions.</p>
+        </div>
+        <div class="w3-third w3-container">
+            <p class="w3-border w3-padding-large w3-padding-32 w3-center">AD</p>
+            <p class="w3-border w3-padding-large w3-padding-64 w3-center">AD</p>
+        </div>
     </div>
 
-    <div class="w3-container w3-theme-l1">
-      <p>Powered by <a href="http://www.w3schools.com/w3css/default.asp" target="_blank">w3.css</a></p>
+    <div class="w3-row w3-padding-64">
+        <div class="w3-twothird w3-container">
+            <h1 class="w3-text-teal">Build, Package and Deploy Function</h1>
+            http://docs.aws.amazon.com/lambda/latest/dg/java-handler-using-predefined-interfaces.html
+            <p></p>
+        </div>
+        <div class="w3-third w3-container">
+            <p class="w3-border w3-padding-large w3-padding-32 w3-center">AD</p>
+            <p class="w3-border w3-padding-large w3-padding-64 w3-center">AD</p>
+        </div>
     </div>
-  </footer>
 
-<!-- END MAIN -->
+    <div class="w3-row w3-padding-64">
+        <div class="w3-twothird w3-container">
+            <h1 class="w3-text-teal">Add Function to API Manager</h1>
+            <p>
+                http://stackoverflow.com/questions/31329958/how-to-pass-a-querystring-or-route-parameter-to-aws-lambda-from-amazon-api-gatew</p>
+        </div>
+        <div class="w3-third w3-container">
+            <p class="w3-border w3-padding-large w3-padding-32 w3-center">AD</p>
+            <p class="w3-border w3-padding-large w3-padding-64 w3-center">AD</p>
+        </div>
+    </div>
+
+    <div class="w3-row w3-padding-64">
+        <div class="w3-twothird w3-container">
+            <h1 class="w3-text-teal">Call the function!</h1>
+            
+            <h2 id="server-response">Result will appear here</h2>
+            <button type="button" onclick="callMe('https://qvpphez67b.execute-api.eu-west-1.amazonaws.com/live?q1=lololol', 'server-response')">Change Content</button>
+
+            <p>If you want to test this locally from localhost, then you need to set CORS headers:
+                http://docs.aws.amazon.com/apigateway/latest/developerguide/how-to-cors.html#how-to-cors-console
+                Don't forget to redeploy after setting this up.</p>
+        </div>
+        <div class="w3-third w3-container">
+            <p class="w3-border w3-padding-large w3-padding-32 w3-center">AD</p>
+            <p class="w3-border w3-padding-large w3-padding-64 w3-center">AD</p>
+        </div>
+    </div>
+
+    <div class="w3-row w3-padding-64">
+        <div class="w3-twothird w3-container">
+            <h1 class="w3-text-teal">Give it a friendly URL</h1>
+            <p>http://docs.aws.amazon.com/apigateway/latest/developerguide/how-to-custom-domains.html</p>
+            <p>You'll need an SSL certificate: https://aws.amazon.com/certificate-manager/ looks nice but at the time of
+                writing:</p>
+            <ol>
+                <li>To use an ACM Certificate with CloudFront, you must request the certificate in the US East (N.
+                    Virginia) region. Not a problem.
+                </li>
+                <li>You need to have access to the certificate body and key. On the roadmap (or some better
+                    integration?) but not available yet: https://forums.aws.amazon.com/thread.jspa?threadID=234686
+            </li>
+            </ol>
+            <p>So you'll need to get a key from another provider and enter it in API Gateway.
+            Generate a Certificate Signing Request (CSR) using: <code>openssl req -new -newkey rsa:2048 -nodes -keyout yourdomain.key -out yourdomain.csr</code></p>
+            Follow the onscreen instructions and then upload the CSR to your chosen certificate provider (I use GoDaddy, other providers are available.)
+            You will then (after paying some money) recieve a certificate, and a certificate chain which can be uploaded to API Gateway.
+
+            Now just create an alias for e.g. api.yourdomain.com to point to the cloudfront endpoint created by API Gateway.
+            Note that you no longer need the stage name as part of the url, as the API Gateway mapping hides that away.
+
+            <h2 id="custom-server-response">Result will appear here</h2>
+            <button type="button" onclick="callMe('https://api.simplyserverless.com?q1=lololol', 'custom-server-response')">Change Content</button>
+
+        </div>
+        <div class="w3-third w3-container">
+            <p class="w3-border w3-padding-large w3-padding-32 w3-center">AD</p>
+            <p class="w3-border w3-padding-large w3-padding-64 w3-center">AD</p>
+        </div>
+    </div>
+
+    <!-- Pagination -->
+    <div class="w3-center w3-padding-64">
+        <ul class="w3-pagination">
+            <li><a class="w3-hover-black w3-hide-small" href="index.html">1</a></li>
+            <li><a class="w3-hover-black" href="staticsites.html">2</a></li>
+            <li><a class="w3-black" href="functions.html">3</a></li>
+            <li><a class="w3-hover-black" href="backends.html">4</a></li>
+            <li><a class="w3-hover-black w3-hide-small" href="contact.html">5</a></li>
+        </ul>
+    </div>
+
+    <footer id="myFooter">
+        <div class="w3-container w3-theme-l2 w3-padding-32">
+            <h4></h4>
+        </div>
+
+        <div class="w3-container w3-theme-l1">
+            <p>Powered by <a href="http://www.w3schools.com/w3css/default.asp" target="_blank">w3.css</a></p>
+        </div>
+    </footer>
+
+    <!-- END MAIN -->
 </div>
 
 <script>
-// Get the Sidenav
-var mySidenav = document.getElementById("mySidenav");
+    // Get the Sidenav
+    var mySidenav = document.getElementById("mySidenav");
 
-// Get the DIV with overlay effect
-var overlayBg = document.getElementById("myOverlay");
+    // Get the DIV with overlay effect
+    var overlayBg = document.getElementById("myOverlay");
 
-// Toggle between showing and hiding the sidenav, and add overlay effect
-function w3_open() {
-    if (mySidenav.style.display === 'block') {
-        mySidenav.style.display = 'none';
-        overlayBg.style.display = "none";
-    } else {
-        mySidenav.style.display = 'block';
-        overlayBg.style.display = "block";
+    // Toggle between showing and hiding the sidenav, and add overlay effect
+    function w3_open() {
+        if (mySidenav.style.display === 'block') {
+            mySidenav.style.display = 'none';
+            overlayBg.style.display = "none";
+        } else {
+            mySidenav.style.display = 'block';
+            overlayBg.style.display = "block";
+        }
     }
-}
 
-// Close the sidenav with the close button
-function w3_close() {
-    mySidenav.style.display = "none";
-    overlayBg.style.display = "none";
-}
+    // Close the sidenav with the close button
+    function w3_close() {
+        mySidenav.style.display = "none";
+        overlayBg.style.display = "none";
+    }
 </script>
 
 <script>
-  function callMe() {
-    var xhttp = new XMLHttpRequest();
-    xhttp.onreadystatechange = function() {
-      if (this.readyState == 4 && this.status == 200) {
-        document.getElementById("server-response").innerHTML = this.responseText;
-      }
-    };
-    xhttp.open("GET", "https://qvpphez67b.execute-api.eu-west-1.amazonaws.com/live?q1=lololol", true);
-    xhttp.send();
-  }
+    function callMe(url, target) {
+        var xhttp = new XMLHttpRequest();
+        xhttp.onreadystatechange = function () {
+            if (this.readyState == 4 && this.status == 200) {
+                document.getElementById(target).innerHTML = this.responseText;
+            }
+        };
+        xhttp.open("GET", url, true);
+        xhttp.send();
+    }
 
 </script>
 
 <script>
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+    (function (i, s, o, g, r, a, m) {
+        i['GoogleAnalyticsObject'] = r;
+        i[r] = i[r] || function () {
+                    (i[r].q = i[r].q || []).push(arguments)
+                }, i[r].l = 1 * new Date();
+        a = s.createElement(o),
+                m = s.getElementsByTagName(o)[0];
+        a.async = 1;
+        a.src = g;
+        m.parentNode.insertBefore(a, m)
+    })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
 
-  ga('create', 'UA-84008767-1', 'auto');
-  ga('send', 'pageview');
+    ga('create', 'UA-84008767-1', 'auto');
+    ga('send', 'pageview');
 
 </script>
 
