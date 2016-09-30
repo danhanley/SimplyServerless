@@ -133,6 +133,7 @@
 
             Now just create an alias for e.g. api.yourdomain.com to point to the cloudfront endpoint created by API Gateway.
             Note that you no longer need the stage name as part of the url, as the API Gateway mapping hides that away.
+            Again, you'll need to redeploy the API for the certificate change to take effect.
 
             <h2 id="custom-server-response">Result will appear here</h2>
             <button type="button" onclick="callMe('https://api.simplyserverless.com?q1=lololol', 'custom-server-response')">Change Content</button>
