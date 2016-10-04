@@ -98,9 +98,12 @@
     <div class="w3-row w3-padding-64">
         <div class="w3-twothird w3-container">
             <h1 class="w3-text-teal">Call the function!</h1>
+            <form name="firstform">
+                Name: <input type="text" name="name"><br>
+            </form>
             
             <h2 id="server-response">Result will appear here</h2>
-            <button type="button" onclick="callMe('https://qvpphez67b.execute-api.eu-west-1.amazonaws.com/live?q1=lololol', 'server-response')">Change Content</button>
+            <button type="button" onclick="callMe('https://qvpphez67b.execute-api.eu-west-1.amazonaws.com/live?name='+firstform.name.value, 'server-response')">Say Hello</button>
 
             <p>If you want to test this locally from localhost, then you need to set CORS headers:
                 http://docs.aws.amazon.com/apigateway/latest/developerguide/how-to-cors.html#how-to-cors-console
@@ -135,8 +138,12 @@
             Note that you no longer need the stage name as part of the url, as the API Gateway mapping hides that away.
             Again, you'll need to redeploy the API for the certificate change to take effect.
 
+            <form name="secondform">
+                Name: <input type="text" name="name"><br>
+            </form>
+
             <h2 id="custom-server-response">Result will appear here</h2>
-            <button type="button" onclick="callMe('https://api.simplyserverless.com?q1=lololol', 'custom-server-response')">Change Content</button>
+            <button type="button" onclick="callMe('https://api.simplyserverless.com?name='+secondform.name.value, 'custom-server-response')">Change Content</button>
 
         </div>
         <div class="w3-third w3-container">
@@ -205,7 +212,6 @@
         xhttp.open("GET", url, true);
         xhttp.send();
     }
-
 </script>
 
 <script>

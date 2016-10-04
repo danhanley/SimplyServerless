@@ -45,10 +45,24 @@ html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif}
 <div class="w3-main" style="margin-left:250px">
 
   <div class="w3-row w3-padding-64">
-    <div class="w3-twothird w3-container">
-      <h1 class="w3-text-teal">Heading</h1>
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Lorem ipsum
-        dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+    <div class="w3-third w3-container">
+      <h1 class="w3-text-teal">Persistence</h1>
+      <p>Backends as a Service (BaaS) usually refers to persisting data in a data store of some sort. This could be a relational database, a graph database or other NoSQL store.</p>
+      <p>For web applications it's usually best to interact with these via a <a href="https://www.ics.uci.edu/~fielding/pubs/dissertation/rest_arch_style.htm">REST</a> API. You can find a <a href="http://www.vinaysahni.com/best-practices-for-a-pragmatic-restful-api#restful">good pragmatic introduction here</a></p>
+      <p>http://docs.aws.amazon.com/sdk-for-java/v1/developer-guide/getting-started.html</p>
+      <p>
+      <form name="theform">
+        Name: <input type="text" name="name"><br>
+      </form>
+
+      <h2 id="server-add-response">Result will appear here</h2>
+      <button type="button" onclick="ajaxCall('https://api.simplyserverless.com/names','server-add-response','POST', theform.name.value)">Add Name</button>
+      <button type="button" onclick="ajaxCall('https://api.simplyserverless.com/names','list-of-names-response','GET', null)">List Names</button>
+      <button type="button" onclick="ajaxCall('https://api.simplyserverless.com/names','server-add-response','DELETE', null)">Empty List</button>
+      </p>
+    </div>
+    <div class="w3-third w3-container w3-row w3-padding-64">
+      <p id="list-of-names-response">List of names will appear here</p>
     </div>
     <div class="w3-third w3-container">
       <p class="w3-border w3-padding-large w3-padding-32 w3-center">AD</p>
@@ -127,6 +141,32 @@ function w3_close() {
     mySidenav.style.display = "none";
     overlayBg.style.display = "none";
 }
+</script>
+
+<script>
+  function ajaxCall(url, target, verb, data) {
+    var xhttp = new XMLHttpRequest();
+    xhttp.onreadystatechange = function () {
+      if (this.readyState == 4 && this.status == 200) {
+        document.getElementById(target).innerHTML = this.responseText;
+      }
+    };
+    switch(verb) {
+      case "GET":
+        xhttp.open("GET", url, true);
+        xhttp.send();
+        break;
+      case "POST":
+        xhttp.open("POST", url, true);
+        xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+        xhttp.send(theform.value);
+        break;
+      case "DELETE":
+        xhttp.open("DELETE", url, true);
+        xhttp.send();
+        break;
+    }
+  }
 </script>
 
 <script>

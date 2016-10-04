@@ -1,4 +1,4 @@
-package com.simplyserverless.example1;
+package com.simplyserverless;
 
 
 public class Response {

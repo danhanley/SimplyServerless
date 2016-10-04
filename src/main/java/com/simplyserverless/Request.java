@@ -1,4 +1,4 @@
-package com.simplyserverless.example1;
+package com.simplyserverless;
 import java.util.Collection;
 import java.util.Map;
 import java.util.Set;
