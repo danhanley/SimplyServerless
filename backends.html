@@ -52,17 +52,17 @@ html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif}
       <p>http://docs.aws.amazon.com/sdk-for-java/v1/developer-guide/getting-started.html</p>
       <p>
       <form name="theform">
-        Name: <input type="text" name="name"><br>
+        Note: <input type="text" name="note"><br>
       </form>
 
       <h2 id="server-add-response">Result will appear here</h2>
-      <button type="button" onclick="ajaxCall('https://api.simplyserverless.com/names','server-add-response','POST', theform.name.value)">Add Name</button>
-      <button type="button" onclick="ajaxCall('https://api.simplyserverless.com/names','list-of-names-response','GET', null)">List Names</button>
-      <button type="button" onclick="ajaxCall('https://api.simplyserverless.com/names','server-add-response','DELETE', null)">Empty List</button>
+      <button type="button" onclick="ajaxCall('https://api.simplyserverless.com/notes','server-add-response','POST', theform)">Add Note</button>
+      <button type="button" onclick="ajaxCall('https://api.simplyserverless.com/notes','list-of-names-response','GET', null)">List Notes</button>
+      <button type="button" onclick="ajaxCall('https://api.simplyserverless.com/notes','server-add-response','DELETE', null)">Empty List</button>
       </p>
     </div>
     <div class="w3-third w3-container w3-row w3-padding-64">
-      <p id="list-of-names-response">List of names will appear here</p>
+      <p id="list-of-names-response">List of notes will appear here</p>
     </div>
     <div class="w3-third w3-container">
       <p class="w3-border w3-padding-large w3-padding-32 w3-center">AD</p>
@@ -101,17 +101,6 @@ html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif}
     </div>
   </div>
 
-  <div class="w3-row w3-padding-64">
-    <div class="w3-twothird w3-container">
-      <h1 class="w3-text-teal">Heading</h1>
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Lorem ipsum
-        dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-    </div>
-    <div class="w3-third w3-container">
-      <p class="w3-border w3-padding-large w3-padding-32 w3-center">AD</p>
-      <p class="w3-border w3-padding-large w3-padding-64 w3-center">AD</p>
-    </div>
-  </div>
 
   <!-- Pagination -->
   <div class="w3-center w3-padding-64">
@@ -178,7 +167,7 @@ function w3_close() {
       case "POST":
         xhttp.open("POST", url, true);
         xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-        xhttp.send(theform.value);
+        xhttp.send(data);
         break;
       case "DELETE":
         xhttp.open("DELETE", url, true);

@@ -65,7 +65,7 @@ html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif}
       <table class="w3-table-all">
         <thead>
           <tr>
-            <th>Generic Capability</th><th>Amazon AWS</th><th>Google Cloud</th><th>Microsoft Azure</th>
+            <th>Generic Capability</th><th>Amazon AWS</th><th>Google Cloud</th><th>Microsoft Azure</th><th>IBM BlueMix</th>
           </tr>
         </thead>
         <tbody>
@@ -74,18 +74,21 @@ html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif}
             <td>S3</td>
             <td>Cloud Storage</td>
             <td>Azure Storage</td>
+            <td>Object Storage</td>
           </tr>
           <tr>
             <th>DNS</th>
             <td>Route 53</td>
             <td>Public DNS</td>
             <td>Azure DNS</td>
+            <td></td>
           </tr>
           <tr>
             <th>Microservices</th>
             <td>Lambda</td>
             <td>Functions</td>
             <td>Functions</td>
+            <td>OpenWhisk</td>
           </tr>
           <tr>
             <th>API management</th>
@@ -133,8 +136,7 @@ html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif}
       The battle cry went out to "treat them as cattle not pets!" The basic idea here is to script the build and deployment of the servers. if one is unwell, kill it off and bring up another with the same configuration.
         A lot of software emerged to enable this automation of infrastructure, cf <a href="https://www.chef.io/chef/">Chef</a>, <a href="Puppet">Puppet</a> and <a href="https://www.ansible.com/">Ansible</a></p>
       <h2 class="w3-text-teal">The Age of the Swarm (2016 - ??)</h2>
-      <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Lorem ipsum
-        dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+      <p>Now we're looking at the datacentre as the computer. Your functions can be run across many machines, without you needing to be aware of the issues involved in scaling it out, mitigating against failure etc. (Well, almost)</p>
     </div>
     <!--
     <div class="w3-third w3-container">
